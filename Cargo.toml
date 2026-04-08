@@ -1,0 +1,24 @@
+[package]
+name = "bakscan"
+version = "0.2.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+reqwest = { version = "0.12", default-features = false, features = ["socks", "rustls-tls", "stream"] }
+clap = { version = "4", features = ["derive"] }
+indicatif = "0.17"
+rand = "0.8"
+url = "2"
+uuid = { version = "1", features = ["v4"] }
+parking_lot = "0.12"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+csv = "1.3"
+chrono = "0.4"
+futures = "0.3"
+
+[profile.release]
+opt-level = 3
+lto = true
+strip = true
